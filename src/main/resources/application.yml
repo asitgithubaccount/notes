@@ -7,9 +7,9 @@ application:
   version: /v1
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/notes1
-    username: asgupta
-    password:
+    url: jdbc:postgresql://${dbhost}:5432/${dbname}
+    username: ${dbusername}
+    password: ${dbpassword}
     hikari:
       maximum-pool-size: 5
       connection-timeout: 10000
