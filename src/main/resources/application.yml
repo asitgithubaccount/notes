@@ -1,0 +1,36 @@
+server:
+  port: 8080
+  servlet.context-path: /notes
+application:
+  title: Notes API
+  description: Notes API
+  version: /v1
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/notes1
+    username: asgupta
+    password:
+    hikari:
+      maximum-pool-size: 5
+      connection-timeout: 10000
+  jpa:
+    generate-ddl : true
+    hibernate:
+      show-sql: true
+      ddl-auto: update
+      use-new-id-generator-mappings: true
+    properties.hibernate.dialect: org.hibernate.dialect.PostgreSQL92Dialect
+  jackson:
+    date-format: com.fasterxml.jackson.databind.util.ISO8601DateFormat
+
+logging:
+  file: logs/application-debug.log
+  level:
+#    org.hibernate.SQL: DEBUG
+#    org.hibernate.type.descriptor.sql.BasicBinder: TRACE
+    com.activemeasure: DEBUG
+
+
+notesuser:
+    user: notesuser
+    password: notespassword
